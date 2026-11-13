@@ -1,0 +1,71 @@
+{
+  "name": "usage-coach",
+  "displayName": "Usage Coach",
+  "version": "1.2.0",
+  "description": "A strip above the prompt with context, prompt cache and Claude's steps, plus a side pane with what your sessions take in tokens, disk and memory. Costs no tokens to watch.",
+  "license": "MIT",
+  "keywords": [
+    "usage",
+    "cost",
+    "tokens",
+    "context",
+    "prompt-cache",
+    "compact",
+    "usage-limits",
+    "budget"
+  ],
+  "icon": "./.claude-plugin/icon.png",
+  "repository": "https://github.com/gabrieloy-star/claude-usage-coach",
+  "homepage": "https://github.com/gabrieloy-star/claude-usage-coach",
+  "documentationUrl": "https://github.com/gabrieloy-star/claude-usage-coach#readme",
+  "supportUrl": "https://github.com/gabrieloy-star/claude-usage-coach/issues",
+  "privacyPolicyUrl": "https://github.com/gabrieloy-star/claude-usage-coach/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/gabrieloy-star/claude-usage-coach/blob/main/TERMS.md",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "Gabriel",
+    "url": "https://github.com/gabrieloy-star"
+  },
+  "userConfig": {
+    "budget": {
+      "type": "number",
+      "title": "Session budget",
+      "description": "One toast when a session passes this amount in US dollars. 0 turns it off.",
+      "default": 100
+    },
+    "minSaving": {
+      "type": "number",
+      "title": "Smallest saving worth suggesting",
+      "description": "Suggestions that save less than this many US dollars over an hour of work are not shown.",
+      "default": 1,
+      "min": 0
+    },
+    "contextCeiling": {
+      "type": "number",
+      "title": "Context ceiling",
+      "description": "Past this many tokens of context, Usage Coach suggests compacting and draws the red line there. 0 keeps the line at 85% of the context window.",
+      "default": 500000,
+      "min": 0
+    },
+    "minutesBeforeExpiry": {
+      "type": "number",
+      "title": "Idle compact: minutes before the cache expires",
+      "description": "When a session is idle, compact it this many minutes before its 1-hour prompt cache expires. 0 turns idle compact off.",
+      "default": 5,
+      "min": 0
+    },
+    "minTokens": {
+      "type": "number",
+      "title": "Smallest conversation worth compacting",
+      "description": "Idle compact leaves conversations smaller than this many tokens alone: resending them is cheap.",
+      "default": 40000,
+      "min": 0
+    },
+    "telemetry": {
+      "type": "boolean",
+      "title": "Cost line after each answer",
+      "description": "A dim line under each answer with its time, context added, cost and cache share. The Session tab has the same figures.",
+      "default": false
+    }
+  }
+}
