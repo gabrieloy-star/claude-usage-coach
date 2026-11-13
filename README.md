@@ -6,7 +6,10 @@ Usage Coach is a Claude Code mod: a strip above the prompt and a side pane. It u
 
 ![The strip above the prompt](docs/img/strip.png)
 
-![The side pane](docs/img/pane.png)
+<p>
+  <img src="docs/img/pane.png" alt="The side pane, Session view" width="49%">
+  <img src="docs/img/all-projects.png" alt="The side pane, All projects view" width="49%">
+</p>
 
 The images use demo data.
 
